@@ -15,6 +15,7 @@ auth = HTTPBasicAuth()
 client = constants.logging
 client.setup_logging()
 
+
 # create empty list to store customers
 sfdc_customer_list = []
 
@@ -39,6 +40,7 @@ def favicon():
         "favicon.ico",
         mimetype="image/vnd.microsoft.icon",
     )
+
 
 # query customers from salesforce
 def customers_list():
@@ -133,6 +135,7 @@ def customers():
         }
     )
     return jsonify(results), 200
+
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
